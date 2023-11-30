@@ -1,32 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 
-struct student{
-	int id; // 학번
-	char name[100]; // 이름
-	float score; // 학점 
+struct point {
+	int x;
+	int y;
 };
+
 
 int main(int argc, char *argv[]) {
 	
 	//instance 선 언, 초기화
-	struct student s1={2313440, "minji", 4.3}; 
+	struct point p1, p2;
+	int xdiff, ydiff;
+	double dist;
 	
-	s1.id=2313440;
-	s1.name[0]='j';
-	s1.score=4.3;
+	printf("input p1 coordinate (x y) : ");
+	scanf("%d %d", &p1.x, &p1.y);
 	
-	//출력
-	printf("ID: %i\n", s1.id);
-	printf("name: %s\n", s1.name);
-	printf("grade: %f\n", s1.score);
+	printf("input p1 coordinate (x y) : ");
+	scanf("%d %d", &p2.x, &p2.y);
 	
-	strcpy(s1.name, "inmin");
-	printf("name2: %s\n");
+	//distance
+	
+	xdiff=p2.x-p1.x;
+	ydiff=p2.y-p1.y;
+	dist=sqrt(xdiff*xdiff+ydiff*ydiff);
+	
+	printf("distance: %f\n", dist);
 		
 	return 0;
 }
